@@ -11,8 +11,47 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        isLogin: false
+      }
     },
+
+    {
+      path: '/shopcart',
+      name: 'shopcart',
+      component: () => import('./views/ShopCart.vue'),
+      meta: {
+        isLogin: true
+      }
+    },
+
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/Login.vue'),
+      meta: {
+        isLogin: false
+      }
+    },
+
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('./views/Register.vue')
+    },
+
+    {
+      path: '/userlist',
+      name: 'userlist',
+      component: () => import('./views/UserList.vue'),
+      meta: {
+        isLogin: true
+      }
+    },
+
+
+
     // {
     //   path: '/about',
     //   name: 'about',
