@@ -12,27 +12,45 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
-      meta: {
-        isLogin: false
-      }
     },
+	{
+		path : '/category',
+		name : 'category',
+		component: () => import('./views/Category.vue')
+	},
+	{
+		path : '/cart',
+		name : 'cart',
+		component: () => import('./views/Cart.vue')
+	},
+	{
+		path : '/user',
+		name : 'user',
+		component: () => import('./views/User.vue')
+	},
+	{
+		path : '/productList',
+		name : 'productList',
+		component: () => import('./views/ProductList.vue')
+	},
+	
+	{
+		path : '/details',
+		name : 'details',
+		component: () => import('./views/Details.vue')
+	},
+	
 
-    {
-      path: '/shopcart',
-      name: 'shopcart',
-      component: () => import('./views/ShopCart.vue'),
-      meta: {
-        isLogin: true
-      }
-    },
+    // {
+    //   path: '/shopcart',
+    //   name: 'shopcart',
+    //   component: () => import('./views/ShopCart.vue'),
+    // },
 
     {
       path: '/login',
       name: 'login',
       component: () => import('./views/Login.vue'),
-      meta: {
-        isLogin: false
-      }
     },
 
     {
@@ -45,9 +63,6 @@ export default new Router({
       path: '/userlist',
       name: 'userlist',
       component: () => import('./views/UserList.vue'),
-      meta: {
-        isLogin: true
-      }
     },
 
 
